@@ -1,0 +1,10 @@
+{
+  "name": "prelaunch-review-sample",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "node init && npx serve site",
+    "review": "./run_review.sh",
+    "build": "node init && echo 'static site, nothing to build'"
+  }
+}

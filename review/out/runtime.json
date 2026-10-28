@@ -1,0 +1,216 @@
+{
+  "before": {
+    "overflow": [
+      {
+        "width": 360,
+        "path": "/",
+        "viewport": 360,
+        "page_width": 982,
+        "widest": {
+          "right": 982,
+          "tag": "span",
+          "cls": "chip"
+        },
+        "overflows": true
+      },
+      {
+        "width": 360,
+        "path": "/activity/1",
+        "viewport": 360,
+        "page_width": 360,
+        "widest": null,
+        "overflows": false
+      },
+      {
+        "width": 390,
+        "path": "/",
+        "viewport": 390,
+        "page_width": 982,
+        "widest": {
+          "right": 982,
+          "tag": "span",
+          "cls": "chip"
+        },
+        "overflows": true
+      },
+      {
+        "width": 390,
+        "path": "/activity/1",
+        "viewport": 390,
+        "page_width": 390,
+        "widest": null,
+        "overflows": false
+      },
+      {
+        "width": 414,
+        "path": "/",
+        "viewport": 414,
+        "page_width": 982,
+        "widest": {
+          "right": 982,
+          "tag": "span",
+          "cls": "chip"
+        },
+        "overflows": true
+      },
+      {
+        "width": 414,
+        "path": "/activity/1",
+        "viewport": 414,
+        "page_width": 414,
+        "widest": null,
+        "overflows": false
+      },
+      {
+        "width": 768,
+        "path": "/",
+        "viewport": 768,
+        "page_width": 982,
+        "widest": {
+          "right": 982,
+          "tag": "span",
+          "cls": "chip"
+        },
+        "overflows": true
+      },
+      {
+        "width": 768,
+        "path": "/activity/1",
+        "viewport": 768,
+        "page_width": 768,
+        "widest": null,
+        "overflows": false
+      },
+      {
+        "width": 1280,
+        "path": "/",
+        "viewport": 1280,
+        "page_width": 1280,
+        "widest": null,
+        "overflows": false
+      },
+      {
+        "width": 1280,
+        "path": "/activity/1",
+        "viewport": 1280,
+        "page_width": 1280,
+        "widest": null,
+        "overflows": false
+      }
+    ],
+    "guard": {
+      "path": "/saved",
+      "status": 200,
+      "location": null,
+      "served_private_page": true
+    },
+    "swipe_scroll_x": 320
+  },
+  "after": {
+    "overflow": [
+      {
+        "width": 360,
+        "path": "/",
+        "viewport": 360,
+        "page_width": 360,
+        "widest": {
+          "right": 982,
+          "tag": "span",
+          "cls": "chip"
+        },
+        "overflows": false
+      },
+      {
+        "width": 360,
+        "path": "/activity/1",
+        "viewport": 360,
+        "page_width": 360,
+        "widest": null,
+        "overflows": false
+      },
+      {
+        "width": 390,
+        "path": "/",
+        "viewport": 390,
+        "page_width": 390,
+        "widest": {
+          "right": 982,
+          "tag": "span",
+          "cls": "chip"
+        },
+        "overflows": false
+      },
+      {
+        "width": 390,
+        "path": "/activity/1",
+        "viewport": 390,
+        "page_width": 390,
+        "widest": null,
+        "overflows": false
+      },
+      {
+        "width": 414,
+        "path": "/",
+        "viewport": 414,
+        "page_width": 414,
+        "widest": {
+          "right": 982,
+          "tag": "span",
+          "cls": "chip"
+        },
+        "overflows": false
+      },
+      {
+        "width": 414,
+        "path": "/activity/1",
+        "viewport": 414,
+        "page_width": 414,
+        "widest": null,
+        "overflows": false
+      },
+      {
+        "width": 768,
+        "path": "/",
+        "viewport": 768,
+        "page_width": 768,
+        "widest": {
+          "right": 982,
+          "tag": "span",
+          "cls": "chip"
+        },
+        "overflows": false
+      },
+      {
+        "width": 768,
+        "path": "/activity/1",
+        "viewport": 768,
+        "page_width": 768,
+        "widest": null,
+        "overflows": false
+      },
+      {
+        "width": 1280,
+        "path": "/",
+        "viewport": 1280,
+        "page_width": 1280,
+        "widest": null,
+        "overflows": false
+      },
+      {
+        "width": 1280,
+        "path": "/activity/1",
+        "viewport": 1280,
+        "page_width": 1280,
+        "widest": null,
+        "overflows": false
+      }
+    ],
+    "guard": {
+      "path": "/saved",
+      "status": 307,
+      "location": "/login",
+      "served_private_page": false
+    },
+    "swipe_scroll_x": 0
+  }
+}

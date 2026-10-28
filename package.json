@@ -1,0 +1,2 @@
+{ "name": "prelaunch-review-sample", "private": true, "version": "1.0.0",
+  "scripts": { "dev": "npx serve site", "review": "./run_review.sh", "build": "echo 'static site, nothing to build'" } }

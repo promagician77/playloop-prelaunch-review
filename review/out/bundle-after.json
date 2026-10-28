@@ -1,0 +1,19 @@
+{
+  "repo": "demo-app-fixed",
+  "build_seconds": 19.221,
+  "browser_js_files": 20,
+  "markers": {
+    "public_key": {
+      "files_containing": 3,
+      "files": [
+        "static/chunks/app/activity/[id]/page-10ef3d981b14c9f8.js",
+        "static/chunks/app/page-1193e165fe9ead70.js",
+        "static/chunks/app/saved/page-1193e165fe9ead70.js"
+      ]
+    },
+    "service_key": {
+      "files_containing": 0,
+      "files": []
+    }
+  }
+}

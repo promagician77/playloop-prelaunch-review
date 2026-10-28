@@ -1,0 +1,120 @@
+{
+  "repo": "demo-app",
+  "tables": 5,
+  "policies": 7,
+  "files_scanned": 19,
+  "counts": {
+    "P0": 6,
+    "P1": 2,
+    "P2": 1,
+    "OK": 5
+  },
+  "findings": [
+    {
+      "rule": "admin-client-in-browser",
+      "severity": "P0",
+      "file": "components/SaveButton.tsx",
+      "line": 3,
+      "evidence": "'use client' component imports @/lib/supabase/admin, which builds a client from the service-role key"
+    },
+    {
+      "rule": "open-read-personal-data",
+      "severity": "P0",
+      "table": "profiles",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 11,
+      "evidence": "policy \"Profiles are viewable\" reads with using (true); table holds home_zip, children"
+    },
+    {
+      "rule": "rls-disabled",
+      "severity": "P0",
+      "table": "saved_activities",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 32,
+      "evidence": "create table public.saved_activities has no \"enable row level security\""
+    },
+    {
+      "rule": "secret-in-public-env",
+      "severity": "P0",
+      "file": ".env.example",
+      "line": 3,
+      "evidence": "NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY: the NEXT_PUBLIC_ prefix tells Next.js to inline this value into browser JavaScript"
+    },
+    {
+      "rule": "secret-in-public-env",
+      "severity": "P0",
+      "file": "lib/supabase/admin.ts",
+      "line": 4,
+      "evidence": "NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY: the NEXT_PUBLIC_ prefix tells Next.js to inline this value into browser JavaScript"
+    },
+    {
+      "rule": "write-endpoint-without-auth",
+      "severity": "P0",
+      "file": "app/api/activities/route.ts",
+      "line": 4,
+      "evidence": "POST handler never checks who is calling, and writes with the service-role client (row-level security skipped)"
+    },
+    {
+      "rule": "private-page-unguarded",
+      "severity": "P1",
+      "file": "app/saved/page.tsx",
+      "line": 1,
+      "evidence": "/saved looks private but the middleware matcher (/profile/:path*) does not cover it"
+    },
+    {
+      "rule": "write-not-owner-scoped",
+      "severity": "P1",
+      "table": "reviews",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 51,
+      "evidence": "policy \"Signed-in users edit reviews\" (update) using (auth.uid() is not null) has no auth.uid() = owner check"
+    },
+    {
+      "rule": "env-not-gitignored",
+      "severity": "P2",
+      "file": "(missing .gitignore)",
+      "line": 1,
+      "evidence": "nothing stops a real .env file with keys from being committed to the repository"
+    },
+    {
+      "rule": "public-read-by-design",
+      "severity": "OK",
+      "table": "activities",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 27,
+      "evidence": "policy \"Activities are public\" is public read; no personal-data columns"
+    },
+    {
+      "rule": "public-read-by-design",
+      "severity": "OK",
+      "table": "reviews",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 48,
+      "evidence": "policy \"Reviews are public\" is public read; no personal-data columns"
+    },
+    {
+      "rule": "rls-locked",
+      "severity": "OK",
+      "table": "organizer_contacts",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 54,
+      "evidence": "RLS on, no policies: not reachable with the public key"
+    },
+    {
+      "rule": "write-owner-scoped",
+      "severity": "OK",
+      "table": "profiles",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 13,
+      "evidence": "policy \"Users update own profile\" (update) is scoped to the owner"
+    },
+    {
+      "rule": "write-owner-scoped",
+      "severity": "OK",
+      "table": "activities",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 29,
+      "evidence": "policy \"Organizers manage own activities\" (all) is scoped to the owner"
+    }
+  ]
+}

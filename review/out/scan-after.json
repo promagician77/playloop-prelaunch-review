@@ -1,0 +1,84 @@
+{
+  "repo": "demo-app-fixed",
+  "tables": 5,
+  "policies": 10,
+  "files_scanned": 20,
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "OK": 9
+  },
+  "findings": [
+    {
+      "rule": "env-gitignored",
+      "severity": "OK",
+      "file": ".gitignore",
+      "line": 1,
+      "evidence": ".env files are ignored by git"
+    },
+    {
+      "rule": "private-page-guarded",
+      "severity": "OK",
+      "file": "app/saved/page.tsx",
+      "line": 1,
+      "evidence": "/saved is covered by middleware"
+    },
+    {
+      "rule": "public-read-by-design",
+      "severity": "OK",
+      "table": "activities",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 27,
+      "evidence": "policy \"Activities are public\" is public read; no personal-data columns"
+    },
+    {
+      "rule": "public-read-by-design",
+      "severity": "OK",
+      "table": "reviews",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 55,
+      "evidence": "policy \"Reviews are public\" is public read; no personal-data columns"
+    },
+    {
+      "rule": "rls-locked",
+      "severity": "OK",
+      "table": "organizer_contacts",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 61,
+      "evidence": "RLS on, no policies: not reachable with the public key"
+    },
+    {
+      "rule": "write-owner-scoped",
+      "severity": "OK",
+      "table": "profiles",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 13,
+      "evidence": "policy \"Users update own profile\" (update) is scoped to the owner"
+    },
+    {
+      "rule": "write-owner-scoped",
+      "severity": "OK",
+      "table": "activities",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 29,
+      "evidence": "policy \"Organizers manage own activities\" (all) is scoped to the owner"
+    },
+    {
+      "rule": "write-owner-scoped",
+      "severity": "OK",
+      "table": "saved_activities",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 43,
+      "evidence": "policy \"Users remove own saves\" (delete) is scoped to the owner"
+    },
+    {
+      "rule": "write-owner-scoped",
+      "severity": "OK",
+      "table": "reviews",
+      "file": "supabase/migrations/0001_init.sql",
+      "line": 58,
+      "evidence": "policy \"Authors edit own reviews\" (update) is scoped to the owner"
+    }
+  ]
+}
